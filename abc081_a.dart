@@ -1,18 +1,18 @@
 import 'dart:io';
 
 void main() {
-
   String? str_tmp = stdin.readLineSync();
-  final String s = str_tmp!;
+  var elements = (str_tmp!).split('').map(int.parse).toList();
+  int count = 0;
 
-  if (s.contains('1')) print('1を含む');
-  exit;
+  print(elements[0].runtimeType);
 
-  var answer = '';
-  print(answer);
+  elements.forEach((element) => {
+    if (element == 1) count++
+  });
+
+  print(count);
 }
-
-
 
 
 
