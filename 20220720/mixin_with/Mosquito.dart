@@ -1,6 +1,7 @@
 import 'AirBorneInsect.dart';
+import 'Insect.dart';
 
-class Mosquito extends AirBorneInsect {
+class Mosquito extends AirBorneInsect with Insect {
   void doMosquitoThing() {
     crawl();
     flutter();

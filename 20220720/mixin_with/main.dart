@@ -20,6 +20,8 @@ abstract class AirborneInsect extends Insect with Fluttering {
   void buzz() {
     print('不快な音を出す　※飛べる虫');
   }
+
+  void makeNoise(String sound);
 }
 
 class Mosquito extends AirborneInsect {
@@ -27,11 +29,15 @@ class Mosquito extends AirborneInsect {
     crawl();
     flutter();
     buzz();
+
     print('這って歩く＋飛ぶ＋不快な音を出す　AND 血を吸う　※飛べる虫の１種');
   }
+
+  @override
+  void makeNoise(String sound) => print(sound);
 }
 
-abstract class Bird with Fluttering {
+class Bird with Fluttering {
   void chirp() {
     print('ピヨピヨ鳴く　※鳥');
   }
