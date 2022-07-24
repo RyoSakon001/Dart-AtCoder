@@ -1,38 +1,27 @@
 import 'dart:io';
 
 void main() {
-  // List str = stdin.readLineSync()!.split('').toList();
-  // print(str);
-
-  // int num = int.parse(stdin.readLineSync()!);
-
-  List<List<String?>> array = [];
-  for (int i = 0; i < 1; i++) {
-    array[i] = stdin.readLineSync()!.split('').toList();
+  int _num = int.parse(stdin.readLineSync()!);
+  List<List<String>> _array = [];
+  for (int i = 0; i < _num; i++) {
+    _array.add(stdin.readLineSync()!.split('').toList());
   }
 
-  // List? arr;
-  // arr![0] = array;
-  // print(arr);
-
-  print(array);
-
-// while (true) {
-// for (int i = 0; i < num; i++) {
-
-// }
-// }
-//   print(num);
+  String _ans = 'correct';
+  for (int i = 0; i < _num; i++) {
+    for (int j = 0; j < _num; j++) {
+      if (i == j) continue;
+      if (!isCorrect(_array[i][j], _array[j][i])) _ans = 'incorrect';
+    }
+  }
+  print(_ans);
 }
 
 bool isCorrect(String a, String b) {
-  bool judge;
+  bool judge = false;
   if ((a == 'W' && b == 'L') ||
       (a == 'L' && b == 'W') ||
-      (a == 'D' && b == 'D')) {
-    judge = true;
-  } else {
-    judge = false;
-  }
+      (a == 'D' && b == 'D')) judge = true;
+
   return judge;
 }
