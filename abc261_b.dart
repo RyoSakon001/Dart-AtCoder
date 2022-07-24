@@ -10,7 +10,7 @@ void main() {
   String _ans = 'correct';
   for (int i = 0; i < _num; i++) {
     for (int j = 0; j < _num; j++) {
-      if (i == j) continue;
+      if (i <= j) continue;
       if (!isCorrect(_array[i][j], _array[j][i])) _ans = 'incorrect';
     }
   }
